@@ -19,19 +19,11 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.16.20" level="project" />
     <orderEntry type="module-library">
-      <library name="Maven: ac.cn.caict.bid.sdk:commons-codec:1.11">
+      <library name="Maven: bif.chain:bif-chain-sdk:1.0.1">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/commons-codec-1.11.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Maven: ac.cn.caict.bid.sdk:eddsd:0.1.0">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/eddsa-0.1.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/bif-chain-sdk-1.0.1-jar-with-dependencies.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
