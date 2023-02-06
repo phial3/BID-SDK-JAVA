@@ -62,11 +62,9 @@ public class BidService {
         try {
             BID = bidSdk.getBidByBifPublicKey(publicKey);
             System.out.println("bid: " + BID);
-        }catch (EncException e){
+        }catch (EncException | IllegalArgumentException e){
             System.out.println("publicKey: " + publicKey+ " is invalid");
-        }catch (IllegalArgumentException e){
-            System.out.println("publicKey: " + publicKey+ " is invalid");
-        }catch (SDKException e){
+        } catch (SDKException e){
             System.out.println(e.getErrorDesc());
         }
     }
@@ -77,11 +75,9 @@ public class BidService {
         try {
             publicKey = bidSdk.getBifPubkeyByPrivateKey(privateKey);
             System.out.println("public-key: " + publicKey);
-        }catch (EncException e){
+        }catch (EncException | IllegalArgumentException e){
             System.out.println("privateKey: " + privateKey+ " is invalid");
-        }catch (IllegalArgumentException e){
-            System.out.println("privateKey: " + privateKey+ " is invalid");
-        }catch (SDKException e){
+        } catch (SDKException e){
             System.out.println(e.getErrorDesc());
         }
     }
@@ -92,11 +88,9 @@ public class BidService {
         try {
             result = HexFormat.byteToHex(bidSdk.signBlob(blobData,privateKey));
             System.out.println("signed-data: " + result);
-        }catch (EncException e){
+        }catch (EncException | IllegalArgumentException e){
             System.out.println("privateKey: " + privateKey+ " is invalid");
-        }catch (IllegalArgumentException e){
-            System.out.println("privateKey: " + privateKey+ " is invalid");
-        }catch (SDKException e){
+        } catch (SDKException e){
             System.out.println(e.getErrorDesc());
         }
     }
@@ -107,11 +101,9 @@ public class BidService {
         try {
             result = bidSdk.verifySig(publicKey, blobData, HexFormat.hexToByte(sign));
             System.out.println("verify-result: " + result);
-        }catch (EncException e){
+        }catch (EncException | IllegalArgumentException e){
             System.out.println("verify-result: " + result);
-        }catch (IllegalArgumentException e) {
-            System.out.println("verify-result: " + result);
-        }catch (SDKException e) {
+        } catch (SDKException e) {
             System.out.println(e.getErrorDesc());
         }
     }
